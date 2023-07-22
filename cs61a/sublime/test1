@@ -1,0 +1,48 @@
+#python函数允许两个返回值
+#空字符串是假值
+#真值：任何不是假值的东西
+'''
+def absolute_value(x):
+	if x < 0:
+		return -x
+	elif x == 0:
+		return 0
+	else:
+		return x
+
+print(absolute_value(-3))
+'''
+'''
+i,total = 0,0
+while i < 3:
+	i = i + 1
+	total = total + i
+
+print(i)
+print(total)
+'''
+def prime_factors(n):
+	'''
+	>>> prime_factors(8)
+	2
+	2
+	2
+	>>> prime_factors(858)
+	2
+	3
+	11
+	13
+	'''
+	while n > 1:
+		k = smallest_prime_factor(n)#功能抽象：先假装已经有这个函数
+		n = n // k
+		print(k)
+#素数：最小因子，如果一个数能除以4，则必能除以2，so 2 is the #smallest numbeer
+
+def smallest_prime_factor(n):
+	""" return the smallest k>1 that evenly divides n """
+	k = 2
+	while n % k != 0:
+		k = k + 1
+	return k
+prime_factors(12)
